@@ -50,7 +50,9 @@ function UserAdd({actionAddUser}) {
                 <option value="1">Active</option>
                 <option value="0">Disable</option>
             </select>
-            <button onClick={(event) => handleSubmit(event)} type="submit">Add User</button>
+            <button onClick={(event) => handleSubmit(event)} type="submit">
+                Add User
+            </button>
         </form>
     );
 }
