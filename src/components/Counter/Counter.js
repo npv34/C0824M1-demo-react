@@ -2,6 +2,7 @@ import {Component} from "react";
 
 class Counter extends Component {
 
+    // Mounting
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +14,7 @@ class Counter extends Component {
         this.setState({counter: this.state.counter + 1})
     }
 
-    componentDidMount =() => {
+    componentDidMount = () => {
         console.log("Component Counter Did Mount")
     }
 
