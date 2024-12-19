@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import "./BookList.css";
 import Star from "./Star/Star";
-import {Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
+import {Link} from "react-router";
 
 const data = [
     {
@@ -39,11 +40,11 @@ function BookList(props) {
     // useEffect == componentDidMount + componentWillUnmount + componentDidUpdate
     useEffect(() => {
         // componentDidMount
-        console.log("componentDidMount")
+        // console.log("componentDidMount")
 
         return () => {
             // componentWillUnmount
-            console.log("componentWillUnmount")
+            // console.log("BookList Component run componentWillUnmount")
         }
 
     }, [])
@@ -72,8 +73,11 @@ function BookList(props) {
     return (
         <div>
             <h1>{pageTitle}</h1>
-            <p>{number}</p>
             <p>{message}</p>
+            <Link to={"/admin/books/create"}>
+                <Button variant="success">Add new book</Button>
+            </Link>
+
             <table className="table-book-list">
                 <thead>
                 <tr className="table-header">
@@ -108,7 +112,10 @@ function BookList(props) {
                             </Form>
                         </td>
                         <td>
-                            <button onClick={() => handleDeleteBook(index)}>Delete</button>
+                            <Button variant={'danger'} onClick={() => handleDeleteBook(index)}>Delete</Button>
+                            <Link to={`/admin/books/${item.id}/edit`}>
+                                <Button variant={"primary"}>Edit</Button>
+                            </Link>
                         </td>
                     </tr>
                 ))}
