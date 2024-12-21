@@ -9,6 +9,7 @@ import HeaderNavbar from "./components/HeaderNavbar/HeaderNavbar";
 import Login from "./pages/Login/Login";
 import Layout from "./components/Layout/Layout";
 import BookEdit from "./components/Books/BookEdit/BookEdit";
+import Weather from "./components/Weather/Weather";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                   <Route path="books/:id/edit" element={<BookEdit />} />
               </Route>
               <Route path="/login" element={<Login />} />
+              <Route path="/weather" element={<Weather/>}/>
           </Routes>
       </>
   );
